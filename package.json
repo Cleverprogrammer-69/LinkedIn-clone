@@ -2,7 +2,6 @@
   "name": "linkedin-clone",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://linked-in-clone-tan-theta.vercel.app/",
   "type": "module",
   "scripts": {
     "dev": "vite",
