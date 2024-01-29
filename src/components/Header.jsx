@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/system';
-import InsertCommentRoundedIcon from '@mui/icons-material/InsertCommentRounded';
+
 const Container = styled('div')({
   backgroundColor: 'white',
   borderBottom: '1px solid rgba(0,0,0,0.08)',

@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+const Home=styled.div`
+  
+`
  const HomeContainer = () => {
   return (
-    <div>HomeContainer</div>
+    <div><Home></Home></div>
   )
 }
 export default HomeContainer
