@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const Container = styled('div')({
   backgroundColor: 'white',
@@ -130,8 +131,10 @@ const SignOut=styled('div')({
   fontSize:"16px",
   transitionDuration:"167ms",
   textAlign:'center',
- 
-
+  color:'#0a66c2',
+  '& Link':{
+    color:'#0a66c2',
+  }
 })
 const User=styled(NavList)({
   '& img':{
@@ -229,7 +232,7 @@ const Header = (props) => {
                   <img src="/images/user.svg" alt="" /><span>Me</span>
                   <img className='downArrow' src="/images/down-icon.svg" alt="" />
                 </a>
-                {show&&<SignOut onClick={()=>{console.log("signed out")}}><a>Sign Out</a></SignOut>}
+                {show&&<SignOut><Link to={"/"}>Sign Out</Link></SignOut>}
                 
               </User>
               <Work>
