@@ -61,7 +61,10 @@ const Nav=styled('nav')({
     left:0,
     bottom:0,
     background:"white",
-    width:'100%'
+    width:'100%',
+    overflowX: 'auto',
+    whiteSpace: 'nowrap',
+    webkitOverflowScrolling: 'touch',
   }
 })
 const NavListWrap = styled('ul')({
@@ -122,7 +125,7 @@ const NavList=styled('li')({
   }
 })
 const SignOut=styled('div')({
-  position:"absolute",
+  position:'absolute',
   top:'45px',
   background:'white',
   borderRadius:'0 0 5px 5px',
