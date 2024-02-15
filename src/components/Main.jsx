@@ -149,7 +149,7 @@ const SharedImg = styled.div`
   background-color: #f9fafb;
   img {
     object-fit: contain;
-    width: auto;
+    width: 100%;
     height: 400px;
   }
 `;
@@ -186,7 +186,7 @@ const SocialAction = styled.div`
   justify-content: space-between;
   margin: 0;
   min-height: 40px;
-  padding: 4px 70px 8px 9px;
+  padding: 4px 50px 8px 9px;
 
   button {
     display: inline-flex;
