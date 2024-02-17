@@ -94,7 +94,7 @@ const SharedActor = styled.div`
     display: flex;
     text-decoration: none;
     img {
-      width: 48px;
+      width: 49px;
       height: 48px;
     }
     & > div {
