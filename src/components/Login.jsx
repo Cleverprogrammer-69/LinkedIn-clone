@@ -177,11 +177,14 @@ const Google=styled.button`
         margin-right: 5px;
     }
 `
-const mapStateToProps=(state)=>{
-    return{}
-}
-const mapDispatchToProps=(dispatch)=>({
-    signIn:()=>dispatch(signInAPI),
-})
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+const mapDispatchToProps = (dispatch) => ({
+  signIn: () => dispatch(signInAPI()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
