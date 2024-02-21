@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 import Main from './Main'
+import { Navigate } from 'react-router-dom'
+import {connect} from 'react-redux'
 const Container=styled.div`
   padding-top: 52px;
   max-width: 100%;
@@ -51,9 +53,10 @@ const Layout = styled.div`
     padding: 0 5px;
   }
 `
- const HomeContainer = () => {
+ const HomeContainer = (props) => {
   return (
    <Container>
+    {!props.user && <Navigate to="/" />}
     <Section>
       <h5>
         <a>Hiring in a hurry? - </a>
@@ -71,4 +74,12 @@ const Layout = styled.div`
    </Container>
   )
 }
-export default HomeContainer
+const mapStateToProps=(state)=>{
+  return{
+    user: state.userState.user,
+  }
+}
+const mapDispatchToProps=(dispatch)=>({
+
+})
+export default connect(mapStateToProps,mapDispatchToProps)(HomeContainer)
