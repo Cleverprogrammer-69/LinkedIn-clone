@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signOutAPI } from '../actions';
 const Container = styled('div')({
   backgroundColor: 'white',
   borderBottom: '1px solid rgba(0,0,0,0.08)',
@@ -238,7 +239,7 @@ const Header = (props) => {
                   <img className='downArrow' src="/images/down-icon.svg" alt="" />
                   </span>
                 </a>
-                {show&&<SignOut><Link to={"/"}>Sign Out</Link></SignOut>}
+                {show&&<SignOut onClick={()=>props.signOut()}>Sign Out</SignOut>}
                 
               </User>
               <Work>
@@ -261,6 +262,6 @@ const mapStateToProps=(state)=>{
   }
 }
 const mapDispatchToProps=(dispatch)=>({
-
+  signOut: ()=>dispatch(signOutAPI())
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Header);
