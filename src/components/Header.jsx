@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 const Container = styled('div')({
   backgroundColor: 'white',
   borderBottom: '1px solid rgba(0,0,0,0.08)',
@@ -181,10 +181,8 @@ const Header = (props) => {
   }, []);
   const handleNavItemClick = (index) => {
     setActiveNavItem(index);
-    // setColor('black');
   };
   const getSvgFillColor = (index) => {
-    // Change this logic based on your requirements
     return activeNavItem === index ? 'darkblack' : 'rgba(0, 0, 0, 0.6)';
   };
   return (
@@ -232,8 +230,13 @@ const Header = (props) => {
       </NavList>
               <User ref={userRef} onClick={(e)=>{e.stopPropagation();setShow(!show);}}>
                 <a>
-                  <img src="/images/user.svg" alt="" /><span>Me</span>
+                  {props.user&&props.user.photoURL ? 
+                  (<img src={props.user.photoURL} alt="" />) 
+                  : 
+                  (<img src='/images/user.png' alt="" />)}
+                  <span>Me
                   <img className='downArrow' src="/images/down-icon.svg" alt="" />
+                  </span>
                 </a>
                 {show&&<SignOut><Link to={"/"}>Sign Out</Link></SignOut>}
                 
@@ -252,5 +255,12 @@ const Header = (props) => {
     </Container>
   );
 };
+const mapStateToProps=(state)=>{
+  return{
+    user: state.userState.user
+  }
+}
+const mapDispatchToProps=(dispatch)=>({
 
-export default Header;
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

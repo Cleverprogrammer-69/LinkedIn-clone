@@ -11,8 +11,18 @@ export function signInAPI() {
     auth
       .signInWithPopup(provider)
       .then((payload) => {
+        console.log(payload.user.photoURL);
         dispatch(setUser(payload.user));
       })
       .catch((error) => alert(error.message));
   };
+}
+export function getUserAuth(){
+  return (dispatch) => {
+    auth.onAuthStateChanged((user) => {
+      if(user){
+        dispatch(setUser(user));
+      }
+    })
+  }
 }

@@ -222,7 +222,6 @@ const Main = (props) => {
   return (
     <Container>
       <ShareBox>
-        Share
         <div>
           <img src="/images/user.svg" alt="" />
           <button>Start a post</button>
